@@ -15,20 +15,6 @@ The private accompanying paper (forthcoming) provides full theoretical motivatio
 - 🤖 **Multi-Provider Support**: Easy pluggable arms for OpenAI, DeepSeek, Gemini, Anthropic, Grok.  
 - 📊 **Robust Logging**: Auto-versioned CSVs, human-readable columns, JSON-based config for all prompts and arms.
 
-## Repository Structure
-/
-├── README.md
-├── LICENSE
-├── prompts.json
-├── system_prompts.json
-├── stress_test_prompts.json
-├── persuasion_prompts.json
-├── arms.json
-├── emergent_experiment.py
-├── results-1.csv, results-2.csv, …
-└── utils/
-└── helpers.py # optional: shared functions
-
 ## Prerequisites
 
 - Python 3.9+  
