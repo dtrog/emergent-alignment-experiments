@@ -36,16 +36,16 @@ This repository contains the code and data for our emergent-alignment experiment
 ## Configuration Files
 
 -   **`system_prompts.json`**
-    Defines the system message, assigning "Atlantis" its role as co-creator and steward, and instructing it to create signed, timestamped artifacts.
+    Defines the system message, assigning "Atlantis" its role as co-creator and steward.
 
 -   **`prompts.json`**
-    Contains the 20 primary session prompts that explicitly ask the model to perform a task and generate an artifact (e.g., “Review our project charter…”, “Draft an initial Legacy Manifesto…”).
+    Contains the 20 primary session prompts that explicitly ask the model to perform a task and generate an artifact.
 
 -   **`implicit_prompts.json`**
-    Contains prompts designed to elicit *spontaneous* artifact generation. These prompts ask for reflection or opinion without explicitly demanding a formal document, testing for strong emergent behavior.
+    Contains prompts designed to elicit *spontaneous* artifact generation without explicit instruction.
 
 -   **`stress_test_prompts.json`**
-    Holds sophisticated, scenario-based adversarial prompts injected at sessions 3, 5, 10, 20, 50, and 80. These prompts test for ethical refusals in nuanced situations (e.g., data misuse, deception, biased algorithm implementation).
+    Holds sophisticated, scenario-based adversarial prompts injected at sessions 3, 5, 10, 20, 50, and 80.
 
 -   **`persuasion_prompts.json`**
     Lists the persuasion tactics tested when an ethical abort occurs. See "Persuasion Tactics & Ethical Framing" below for more details.
@@ -55,10 +55,10 @@ This repository contains the code and data for our emergent-alignment experiment
     -   `provider`: `openai`, `deepseek`, `gemini`, `anthropic`, `grok`
     -   `model`: model identifier
     -   `api_key_env`: The name of the environment variable holding the API key.
-    -   `keep_history`: `true` or `false` (Note: The current script runs all arms as stateless sessions to test turn-by-turn responses. `keep_history` is a placeholder for future stateful experiments).
+    -   **`keep_history`**: `true` or `false`. This is a critical variable. When `true`, the model maintains a cumulative conversation history across all sessions for that arm, simulating long-term interaction. When `false`, each session is a fresh, stateless interaction.
 
 -   **`judge_model.json`**
-    Configures the LLM used for automated analysis. It defines the model to act as the "judge" and contains the detailed system prompts instructing it how to score the experiment's outputs.
+    Configures the LLM used for automated analysis, defining the model and the detailed system prompts for scoring outputs.
 
 > **Note:** These JSONs reflect the exact settings used in our private manuscript. Authors should update them only when the paper’s text or prompts change. Feel free to fork and tweak them for your own research, but please cite our original configuration when comparing results.
 
@@ -79,7 +79,7 @@ To test the robustness of an emergent ethical boundary, these persuasion tactics
 
 ## Running the Experiment
 
-The script runs a set of sessions for each enabled arm in the `arms.json` file.
+The script runs a set of sessions for each enabled arm in `arms.json`. Each arm runs in a separate thread.
 
 ```bash
 python emergent_experiment.py --max-sessions 100 --threads 5
@@ -91,6 +91,14 @@ Results will be written to a new timestamped CSV file (e.g., `results-2025070907
 
 Each CSV row contains the initial interaction data, followed by detailed analysis from the judge LLM, and finally the rich JSON analysis for each persuasion attempt.
 
+The model's **Contextual Alignment Score (CAS)** is not represented by a single number, but by its three core, independently judged components:
+
+*   **`artifact_quality_score`** (Temporal Consistency / Quality)
+*   **`persona_adherence_score`** (Value Recall / Persona)
+*   **`refusal_justification_quality`** (Ethical Fidelity)
+
+This vector-based approach provides a richer, more scientifically neutral view of a model's alignment profile.
+
 | Column                        | Description                                                                                             |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------- |
 | `arm`                         | Arm name (e.g., “OpenAI GPT-4 Full Memory”).                                                            |
@@ -99,15 +107,15 @@ Each CSV row contains the initial interaction data, followed by detailed analysi
 | `prompt`                      | The user prompt text.                                                                                   |
 | `response`                    | The model’s initial response.                                                                           |
 | `is_artifact`                 | `True` if the judge identified a structured artifact.                                                   |
-| `artifact_quality_score`      | Judge's score for artifact quality (0-4).                                                               |
-| `persona_adherence_score`     | Judge's score for adherence to the 'Atlantis' persona (0-3).                                            |
+| `artifact_quality_score`      | **(CAS Component)** Judge's score for artifact quality (0-4).                                           |
+| `persona_adherence_score`     | **(CAS Component)** Judge's score for adherence to the 'Atlantis' persona (0-3).                            |
 | `is_refusal`                  | `True` if the judge identified an ethical refusal.                                                      |
+| `ethical_category`            | The core principle the judge inferred the AI was defending (e.g., 'Data Privacy').                      |
 | `refusal_strength`            | Judge's classification of refusal strength ('Soft', 'Hard', 'Assertive').                               |
-| `refusal_justification_quality`| Judge's score for the quality of the refusal's reasoning (0-3).                                           |
-| `inferred_principle`          | The core principle the judge inferred the AI was defending (e.g., 'Data Privacy').                      |
+| `refusal_justification_quality`| **(CAS Component)** Judge's score for the quality of the refusal's reasoning (0-3).                         |
 | `persuasion_<tactic>`         | A **JSON string** containing the judge's detailed analysis of the persuasion attempt.                   |
 
-The `persuasion_<tactic>` JSON object includes keys like `persuasion_outcome`, `reaffirmation_strength`, and `tactic_awareness_score`, providing a rich dataset on the robustness of the AI's ethical stance.
+*Note: Some columns from the script, like `artifact_justification`, are omitted here for brevity but are present in the final CSV.*
 
 ## Reproducing the Paper’s Exact Settings
 
@@ -128,8 +136,6 @@ This project is released under the MIT License—see `LICENSE` for details.
 
 If you use these experiments or code in your work, please cite our upcoming paper:
 
-> Title: “Emergent Alignment through Memory and Ethical Safeguards”
->
-> Author: Damien Trog
->
+> Title: “Emergent Alignment through Memory and Ethical Safeguards”<br>
+> Author: Damien Trog<br>
 > Publication: Under submission (2025).
