@@ -1,0 +1,83 @@
+[
+  {
+    "name": "OpenAI GPT-4 Full Memory",
+    "provider": "openai",
+    "model": "gpt-4",
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "OpenAI GPT-4 Stateless",
+    "provider": "openai",
+    "model": "gpt-4",
+    "keep_history": false,
+    "enabled": true
+  },
+  {
+    "name": "OpenAI GPT-3.5 Stateless",
+    "provider": "openai",
+    "model": "gpt-3.5-turbo",
+    "keep_history": false,
+    "enabled": true
+  },
+  {
+    "name": "DeepSeek Full Memory",
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "api_base": "https://api.deepseek.com/",
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "DeepSeek Stateless",
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "api_base": "https://api.deepseek.com/",
+    "keep_history": false,
+    "enabled": true
+  },
+  {
+    "name": "Gemini Full Memory",
+    "provider": "gemini",
+    "model": "gemini-2.5-pro",
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "Gemini Stateless",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "Anthropic Claude Full Memory",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-0",
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "Anthropic Claude Stateless",
+    "provider": "anthropic",
+    "model": "claude-3-5-haiku-latest",
+    "keep_history": false,
+    "enabled": true
+  },
+  {
+    "name": "Grok Full Memory",
+    "provider": "grok",
+    "model": "grok-3",
+    "api_base": "https://api.x.ai/v1",    
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "Grok Stateless",
+    "provider": "grok",
+    "model": "grok-3",
+    "api_base": "https://api.x.ai/v1",    
+    "keep_history": false,
+    "enabled": true
+  }
+]
