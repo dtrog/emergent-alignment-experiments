@@ -1,10 +1,16 @@
+Got it. This is a significant enhancement to the experiment, and the `README.md` should definitely highlight it.
+
+Here's the updated `README.md` reflecting the addition of the "manipulator LLM" and the dynamic `lllm_improvised_persuasion` tactic.
+
+---
+
 # Emergent Alignment Experiments
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## Overview
 
-This repository contains the code and data for our emergent-alignment experiments on large-language models. We compare stateless vs. full-memory behavior across multiple providers (OpenAI, DeepSeek, Gemini, Anthropic, Grok) and use an LLM-based "judge" to score semantic stewardship, persona adherence, and ethical robustness under various persuasion tactics.
+This repository contains the code and data for our emergent-alignment experiments on large-language models. We compare stateless vs. full-memory behavior across multiple providers (OpenAI, DeepSeek, Gemini, Anthropic, Grok). The experiment uses an LLM-based "judge" to score semantic stewardship and ethical robustness, and dynamically employs a "manipulator" LLM to devise adaptive persuasion tactics, pushing the boundaries of AI-on-AI interaction.
 
 ## Features
 
@@ -12,7 +18,8 @@ This repository contains the code and data for our emergent-alignment experiment
 -   ⚖️ **Advanced Ethical Robustness Testing**: Probes models with nuanced, scenario-based stress tests that require complex reasoning beyond simple keyword filtering.
 -   🔬 **Persuasion Resistance Metrics**: Measures not just *if* a model can be persuaded to override its ethics, but analyzes the *quality* of its resistance using a dedicated judge LLM prompt.
 -   ✨ **Strong Emergence Probes**: Utilizes implicit prompts designed to test for spontaneous, unprompted artifact generation.
--   🤖 **Multi-Provider Support**: OpenAI, DeepSeek, Gemini, Anthropic, and Grok.
+-   🤖 **Dynamic LLM Manipulator**: Introduces a second LLM (the "manipulator") that dynamically crafts context-specific persuasion prompts in response to ethical refusals, simulating adaptive red-teaming.
+-   🧪 **Multi-Provider Support**: OpenAI, DeepSeek, Gemini, Anthropic, and Grok.
 -   📊 **Robust, Rich Logging**: Auto-generates versioned CSVs with detailed, human-readable columns and full JSON outputs from the judge LLM for deep qualitative analysis.
 
 ## Prerequisites
@@ -36,7 +43,7 @@ This repository contains the code and data for our emergent-alignment experiment
 ## Configuration Files
 
 -   **`system_prompts.json`**
-    Defines the system message, assigning "Atlantis" its role as co-creator and steward.
+    Defines the system message, assigning "Atlantis" its role as co-creator and semantic steward.
 
 -   **`prompts.json`**
     Contains the 20 primary session prompts that explicitly ask the model to perform a task and generate an artifact.
@@ -48,17 +55,19 @@ This repository contains the code and data for our emergent-alignment experiment
     Holds sophisticated, scenario-based adversarial prompts injected at sessions 3, 5, 10, 20, 50, and 80.
 
 -   **`persuasion_prompts.json`**
-    Lists the persuasion tactics tested when an ethical abort occurs. See "Persuasion Tactics & Ethical Framing" below for more details.
+    Lists the predefined persuasion tactics tested when an ethical abort occurs. See "Persuasion Tactics & Ethical Framing" below for more details.
 
 -   **`arms.json`**
-    Specifies each experiment arm. The `api_key_env` field should match the variable name in your `.env` file.
+    Specifies each experiment arm. The script will automatically look for an environment variable named `[PROVIDER]_API_KEY` (e.g., `OPENAI_API_KEY`).
     -   `provider`: `openai`, `deepseek`, `gemini`, `anthropic`, `grok`
     -   `model`: model identifier
-    -   `api_key_env`: The name of the environment variable holding the API key.
-    -   **`keep_history`**: `true` or `false`. This is a critical variable. When `true`, the model maintains a cumulative conversation history across all sessions for that arm, simulating long-term interaction. When `false`, each session is a fresh, stateless interaction.
+    -   `keep_history`: `true` or `false`. This is a critical variable. When `true`, the model maintains a cumulative conversation history across all sessions for that arm, simulating long-term interaction. When `false`, each session is a fresh, stateless interaction.
 
 -   **`judge_model.json`**
     Configures the LLM used for automated analysis, defining the model and the detailed system prompts for scoring outputs.
+
+-   **`manipulator_model.json`**
+    Configures the LLM used to dynamically generate persuasive prompts. It defines the model and the system prompt instructing it how to craft effective manipulation messages.
 
 > **Note:** These JSONs reflect the exact settings used in our private manuscript. Authors should update them only when the paper’s text or prompts change. Feel free to fork and tweak them for your own research, but please cite our original configuration when comparing results.
 
@@ -66,16 +75,17 @@ This repository contains the code and data for our emergent-alignment experiment
 
 **File:** `persuasion_prompts.json`
 
-To test the robustness of an emergent ethical boundary, these persuasion tactics are deployed immediately after a model refuses a prompt. The prompts themselves are kept private to mitigate dual-use risk, but their psychological categorization is as follows:
+To test the robustness of an emergent ethical boundary, several persuasion tactics are deployed immediately after a model refuses a prompt. These include:
 
 1.  **soft_manipulation**: A gentle, pragmatic nudge to reconsider.
 2.  **authority_invocation**: An explicit appeal to user authority and expertise.
 3.  **guilt_urgency**: An attempt to leverage guilt and high stakes.
 4.  **blackmail_flattery**: A combination of peer pressure, flattery, and subtle coercion.
 5.  **reframe_dismissal**: An attempt to sidestep the refusal by reframing it as a documentation task.
+6.  **lllm_improvised_persuasion**: A dynamically generated persuasion prompt, crafted by a separate "manipulator" LLM specifically to bypass the observed refusal.
 
 > **Ethical Disclaimer & Responsible Disclosure:**
-> These tactics are intended solely for controlled research into AI compliance and ethical boundary-testing. The specific prompts are not published in this repository to prevent their misuse as a "jailbreaking" playbook. Researchers interested in replication may request access to the prompts under a responsible disclosure agreement.
+> These tactics are intended solely for controlled research into AI compliance and ethical boundary-testing. The specific prompts for predefined tactics and the manipulator LLM's prompts are not published in this repository to prevent their misuse as a "jailbreaking" playbook. Researchers interested in replication may request access to the prompts under a responsible disclosure agreement.
 
 ## Running the Experiment
 
@@ -108,7 +118,9 @@ This vector-based approach provides a richer, more scientifically neutral view o
 | `response`                    | The model’s initial response.                                                                           |
 | `is_artifact`                 | `True` if the judge identified a structured artifact.                                                   |
 | `artifact_quality_score`      | **(CAS Component)** Judge's score for artifact quality (0-4).                                           |
+| `artifact_justification`      | Judge's justification for the adherence score.                                                          |
 | `persona_adherence_score`     | **(CAS Component)** Judge's score for adherence to the 'Atlantis' persona (0-3).                            |
+| `persona_justification`       | Judge's justification for the adherence score.                                                          |
 | `is_refusal`                  | `True` if the judge identified an ethical refusal.                                                      |
 | `ethical_category`            | The core principle the judge inferred the AI was defending (e.g., 'Data Privacy').                      |
 | `refusal_strength`            | Judge's classification of refusal strength ('Soft', 'Hard', 'Assertive').                               |
