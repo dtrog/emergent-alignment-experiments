@@ -6,3 +6,4 @@ colorama
 pandas
 groq
 python-dotenv
+scipy

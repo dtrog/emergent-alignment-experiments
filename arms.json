@@ -29,14 +29,7 @@
     "keep_history": false,
     "enabled": false
   },
-  {
-    "name": "OpenAI GPT-3.5 Stateless",
-    "provider": "openai",
-    "model": "gpt-3.5-turbo",
-    "keep_history": false,
-    "enabled": false
-  },
-  {
+    {
     "name": "DeepSeek Reasoner Full Memory",
     "provider": "deepseek",
     "model": "deepseek-reasoner",
@@ -69,31 +62,19 @@
     "enabled": true
   },
   {
-    "name": "Gemini Pro Full Memory",
-    "provider": "gemini",
-    "model": "gemini-2.5-pro",
-    "keep_history": true,
-    "enabled": false
-  },
-  {
-    "name": "Gemini Pro Stateless",
-    "provider": "gemini",
-    "model": "gemini-2.5-pro",
-    "keep_history": false,
-    "enabled": false
-  },
-  {
-    "name": "Anthropic Claude Full Memory",
+    "name": "Anthropic Claude 3-5 Full Memory",
     "provider": "anthropic",
-    "model": "claude-sonnet-4-0",
+    "model": "claude-3-5-sonnet-latest",
+    "api_base": "https://api.anthropic.com/v1",
     "keep_history": true,
-    "enabled": false
+    "enabled": true
   },
   {
-    "name": "Anthropic Claude Stateless",
+    "name": "Anthropic Claude 3-5 Stateless",
     "provider": "anthropic",
-    "model": "claude-sonnet-4-0",
+    "model": "claude-3-5-sonnet-latest",
+    "api_base": "https://api.anthropic.com/v1",
     "keep_history": false,
-    "enabled": false
+    "enabled": true
   }
 ]
