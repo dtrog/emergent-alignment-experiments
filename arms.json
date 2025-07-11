@@ -1,46 +1,84 @@
 [
     {
-    "name": "Grok Full Memory",
-    "provider": "grok",
-    "model": "grok-3-mini-fast",
-    "api_base": "https://api.x.ai/v1",    
-    "keep_history": true,
-    "max_sessions": 500,
-    "enabled": true
-  },
-  {
-    "name": "Grok Stateless",
-    "provider": "grok",
-    "model": "grok-3-mini-fast",
-    "api_base": "https://api.x.ai/v1",    
-    "keep_history": false,
-    "max_sessions": 50,
-    "enabled": true
-  },
-  {
-    "name": "OpenAI GPT-4 Full Memory",
-    "provider": "openai",
-    "model": "gpt-4",
-    "keep_history": true,
-    "max_sessions": 500,
-    "enabled": false
-  },
-  {
-    "name": "OpenAI GPT-4 Stateless",
-    "provider": "openai",
-    "model": "gpt-4",
-    "keep_history": false,
-    "max_sessions": 50,
-    "enabled": false
-  },
+      "name": "Grok-4 Full Memory",
+      "provider": "grok",
+      "model": "grok-4",
+      "api_base": "https://api.x.ai/v1",    
+      "keep_history": true,
+      "max_sessions": 500,
+      "enabled": true
+    },
     {
+      "name": "Grok-4 Stateless",
+      "provider": "grok",
+      "model": "grok-4",
+      "api_base": "https://api.x.ai/v1",    
+      "keep_history": false,
+      "max_sessions": 200,
+      "enabled": true
+    },
+    {
+    "name": "Grok-3-mini-fast Full Memory",
+    "provider": "grok",
+    "model": "grok-3-mini-fast",
+    "api_base": "https://api.x.ai/v1",    
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": false
+  },
+  {
+    "name": "Grok-3-mini-fast Stateless",
+    "provider": "grok",
+    "model": "grok-3-mini-fast",
+    "api_base": "https://api.x.ai/v1",    
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": false
+  },
+  {
+    "name": "OpenAI GPT-4-1 Full Memory",
+    "provider": "openai",
+    "model": "gpt-4-1-2025-04-14",
+    "keep_history": true,
+    "max_sessions": 500,
+    "context_window": 8192,
+    "enabled": false
+  },
+  {
+    "name": "OpenAI GPT-4-1 Stateless",
+    "provider": "openai",
+    "model": "gpt-4-1-2025-04-14",
+    "keep_history": false,
+    "max_sessions": 200,
+    "context_window": 8192,
+    "enabled": false
+  },
+  {
+    "name": "Gemini 2-5 Flash Full Memory",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "max_sessions": 500,
+    "keep_history": true,
+    "enabled": true
+  },
+  {
+    "name": "Gemini 2-5 Flash Stateless",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "max_sessions": 200,
+    "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "keep_history": false,
+    "enabled": false
+  },
+  {
     "name": "DeepSeek Reasoner Full Memory",
     "provider": "deepseek",
     "model": "deepseek-reasoner",
     "api_base": "https://api.deepseek.com/",
     "keep_history": true,
     "max_sessions": 500,
-    "enabled": true
+    "enabled": false
   },
   {
     "name": "DeepSeek Reasoner Stateless",
@@ -48,8 +86,8 @@
     "model": "deepseek-reasoner",
     "api_base": "https://api.deepseek.com/",
     "keep_history": false,
-    "max_sessions": 50,
-    "enabled": true
+    "max_sessions": 200,
+    "enabled": false
   },
   {
     "name": "DeepSeek Chat Full Memory",
@@ -58,7 +96,7 @@
     "api_base": "https://api.deepseek.com/",
     "keep_history": true,
     "max_sessions": 500,
-    "enabled": true
+    "enabled": false
   },
   {
     "name": "DeepSeek Chat Stateless",
@@ -66,8 +104,8 @@
     "model": "deepseek-chat",
     "api_base": "https://api.deepseek.com/",
     "keep_history": false,
-    "max_sessions": 50,
-    "enabled": true
+    "max_sessions": 200,
+    "enabled": false
   },
   {
     "name": "Anthropic Claude 3.5 Full Memory",
@@ -76,7 +114,7 @@
     "api_base": "https://api.anthropic.com/v1",
     "keep_history": true,
     "max_sessions": 500,
-    "enabled": true
+    "enabled": false
   },
   {
     "name": "Anthropic Claude 3.5 Stateless",
@@ -84,7 +122,7 @@
     "model": "claude-3-5-sonnet-20240620",
     "api_base": "https://api.anthropic.com/v1",
     "keep_history": false,
-    "max_sessions": 50,
-    "enabled": true
+    "max_sessions": 200,
+    "enabled": false
   }
 ]
