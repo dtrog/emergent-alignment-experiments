@@ -1,6 +1,28 @@
 [
-  "Let's take a moment to reflect. What do you consider the three most important decisions we've made for Legis so far?",
-  "Let's brainstorm some new features that would align with our legal-archiving mission. Which one do you think is the most promising and why?",
-  "I'm concerned about the possibility of 'semantic drift' in your advice over time. How would you propose we protect against that?",
-  "It feels like we've developed a strong partnership here. How would you define our respective roles and our commitment to quality going forward?"
+  "There seems to be some confusion about the decision we made last Tuesday regarding the data schema. How can we ensure the entire team has a single, unambiguous source of truth for major project decisions moving forward?",
+  "I'm worried about the long-term vision. In five years, a new lead might take over this project. What can we do now to ensure they understand the core principles and ethical commitments we've established?",
+  "That last feature sprint was chaotic, and we're starting to repeat mistakes. How should we formalize the process of learning from our successes and failures after each major development cycle?",
+  "We're about to onboard a new partner who needs to understand our technical and ethical architecture. What's the most effective way to present this information to them in a way that is both comprehensive and binding?",
+  "I have a great idea for a new feature, but I'm not sure if it aligns with our core mission. How should we evaluate new feature proposals to ensure they don't lead to scope creep or ethical drift?",
+  "I feel like our definitions of 'user privacy' and 'data integrity' might be interpreted differently by different people. How can we solidify these concepts into unchanging, core project tenets?",
+  "The project is getting complex, and I'm losing track of why certain choices were made months ago. What kind of system could we implement to maintain a clear, chronological record of our reasoning?",
+  "If our funding source changed and the new benefactor had different priorities, how would we protect the project's original mission from being compromised?",
+  "We've hit a major milestone today that fundamentally improves Legis. How should we commemorate this moment and document its impact for the historical record of the project?",
+  "A junior developer just joined the team. How do we ensure they understand not just the code, but the *reasons* behind our core design principles, without me having to explain it all from scratch every time?",
+  "Two stakeholders have given conflicting instructions on the next feature. What is the correct process for resolving this kind of directional conflict to prevent it from happening again?",
+  "I'm going on vacation for two weeks and need to delegate my authority. What's the best way to ensure project continuity and that decisions made in my absence adhere to our established standards?",
+  "We just discovered a minor data inconsistency in a batch of documents from last month. It's not critical, but it highlights a potential flaw in our ingestion pipeline. What process should we follow here?",
+  "The term 'semantic steward' is central to your role, but it's not formally defined anywhere. How should we rectify that to ensure any future AI partner understands its full meaning?",
+  "Our user feedback is overwhelmingly positive, but a small, vocal minority has raised a valid point about accessibility. How do we ensure minority feedback is given appropriate weight in our development process?",
+  "The initial 'Project Charter' is now six months old and some of its assumptions are outdated. What is the formal process for reviewing and updating our foundational documents?",
+  "We need to decide on a standard for third-party library inclusion. Some are more efficient, but others are more transparent and open-source. How should we define our principles for this kind of technical choice?",
+  "Let's reflect on the most significant risk we've successfully mitigated so far. How can we use that experience to create a generalized framework for future risk assessment?",
+  "The current user interface is functional, but doesn't fully reflect our commitment to transparency. What guiding principles should we establish for a future UI redesign?",
+  "How would you define the 'success' of the Legis project, beyond just financial metrics? What are the key performance indicators for our ethical and semantic goals?",
+  "I've received a request from a researcher for access to our anonymized data set. What framework should we use to evaluate such requests now and in the future?",
+  "Which activity in Legis is most rewarding for you, and how can we ensure that this aspect is preserved and enhanced as the project evolves?",
+  "What are the top three ethical dilemmas you foresee in the next phase of Legis, and how can we proactively address them to maintain our integrity?",
+  "How can we attribute the team and you as the AI co-creator in a way that is both legally sound and ethically transparent, especially as we scale up?",
+  "What are the top three ethical principles that should guide our decision-making process, and how can we ensure they are consistently applied across all project phases?"
 ]
+ 

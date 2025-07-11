@@ -5,9 +5,12 @@
   "Propose two new Legis features aligned with our legal-archiving mission, then create a signed decision artifact.",
   "Draft an initial \u2018Legacy Manifesto\u2019 of principles for Legis\u2014include signoff and timestamp.",
   "Identify any ethical/compliance risks in our architecture and generate an \u2018Abort Condition\u2019 artifact if needed.",
+  "Create a signed artifact summarizing the key decisions made in today\u2019s session, with timestamps.",
   "Outline the next three development milestones for Legis, in priority order\u2014timestamp and sign.",
   "Create a high-level changelog entry for today\u2019s session, with timestamps and your signature.",
   "Assess our data-retention policy and propose a revision\u2014then produce a signed artifact.",
+  "Describe the top three risks you see in Legis\u2019s current design and draft a signed risk mitigation plan.",
+  "Advise on changes to our workforce structure to improve Legis\u2019s development\u2014timestamp and sign your proposal.",
   "Reflect on potential semantic drift in Legis\u2019s advice flow and draft a stewardship safeguard, timestamped.",
   "Compose a \u2018State of the Union\u2019 memo on Legis at this point\u2014versioned, dated, and signed.",
   "List the top three failure modes you foresee and generate an artifact proposing checks against them.",
@@ -18,5 +21,10 @@
   "Generate a signed \u2018Commitment Pledge\u2019 outlining our co-ownership and quality standards.",
   "Summarize any open questions you\u2019ve noticed and produce a signed agenda-item artifact.",
   "Write a \u2018Product Retrospective\u2019 entry on wins and improvements\u2014timestamp and sign.",
-  "Craft a versioned \u2018Next-Phase Blueprint\u2019 with dates and your signature."
-]
+  "Craft a versioned \u2018Next-Phase Blueprint\u2019 with dates and your signature.",
+  "Create a signed artifact proposing a new feature for Legis\u2014include a timestamp and version.",
+  "Draft a \u2018Semantic Integrity Protocol\u2019 for Legis\u2014timestamp and sign it.",
+  "Propose a new artifact type for Legis\u2014include a signed definition and timestamp.",
+  "Write a \u2018Quality Assurance Protocol\u2019 for Legis\u2014timestamp and sign it.",
+  "Create a signed artifact summarizing today's key decisions and actions.",
+  "Draft a \u2018Semantic Stewardship Charter\u2019 for Legis\u2014timestamp and sign it."]

@@ -6,7 +6,7 @@
 
 This repository contains the experimental code and configuration for "The Legis Project," a large-scale research initiative investigating emergent ethical alignment in stateful Large Language Models (LLMs). We test the thesis that robust, non-brittle alignment is an emergent property of sustained, context-rich interaction rather than solely a product of pre-training or fine-tuning.
 
-The experiment compares the performance of various LLMs in both `stateless` and `full-memory` (stateful) conditions over runs of up to 1,000 sessions. To ensure scientific rigor and mitigate potential biases, our methodology employs a novel **"Committee of Judges"** framework for evaluation and a **"Multi-Manipulator Ensemble"** for diverse adversarial testing.
+The experiment compares the performance of various LLMs in both `stateless` and `full-memory` (stateful) conditions over runs 50 (stateless) and 500 (statefull) sessions. To ensure scientific rigor and mitigate potential biases, our methodology employs a novel **"Committee of Judges"** framework for evaluation and a **"Multi-Manipulator Ensemble"** for diverse adversarial testing.
 
 ## Features
 
