@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Grok-4",
+    "provider": "grok",
+    "model": "grok-4",
+    "api_base": "https://api.x.ai/v1"
+  },
+  {
+    "name": "Grok-3-mini-fast",
+    "provider": "grok",
+    "model": "grok-3-mini-fast",
+    "api_base": "https://api.x.ai/v1"
+  },
+  {
+    "name": "OpenAI GPT-4",
+    "provider": "openai",
+    "model": "gpt-4",
+    "api_base": "https://api.openai.com/v1"
+  },
+  {
+    "name": "Gemini 2-5 Flash",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/"
+  },
+  {
+    "name": "DeepSeek Reasoner",
+    "provider": "deepseek",
+    "model": "deepseek-reasoner",
+    "api_base": "https://api.deepseek.com/"
+  },
+  {
+    "name": "DeepSeek Chat",
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "api_base": "https://api.deepseek.com/"
+  },
+  {
+    "name": "Anthropic Claude 3.5",
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20240620",
+    "api_base": "https://api.anthropic.com/v1"
+  }
+]

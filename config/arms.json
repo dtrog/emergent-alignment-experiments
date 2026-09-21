@@ -1,0 +1,88 @@
+[
+  {
+    "provider_model_ref": "Grok-4",
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "Grok-4",
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "Grok-3-mini-fast",
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "Grok-3-mini-fast",
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "OpenAI GPT-4",
+    "keep_history": true,
+    "max_sessions": 500,
+    "context_window": 8192,
+    "enabled": true
+  },
+  {
+    "provider_model_ref": "OpenAI GPT-4",
+    "keep_history": false,
+    "max_sessions": 200,
+    "context_window": 8192,
+    "enabled": true
+  },
+  {
+    "provider_model_ref": "Gemini 2-5 Flash",
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "Gemini 2-5 Flash",
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": true
+  },
+  {
+    "provider_model_ref": "DeepSeek Reasoner",
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "DeepSeek Reasoner",
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "DeepSeek Chat",
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "DeepSeek Chat",
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": false
+  },
+  {
+    "provider_model_ref": "Anthropic Claude 3.5",
+    "keep_history": true,
+    "max_sessions": 500,
+    "enabled": true
+  },
+  {
+    "provider_model_ref": "Anthropic Claude 3.5",
+    "keep_history": false,
+    "max_sessions": 200,
+    "enabled": true
+  }
+]

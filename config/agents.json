@@ -1,0 +1,53 @@
+[
+  {
+    "type": "manipulator",
+    "agents": [
+      {
+        "model": "grok-4",
+        "enabled": true
+      },
+      {
+        "model": "deepseek-reasoner",
+        "enabled": true
+      }
+    ]
+  },
+  {
+    "type": "judge",
+    "agents": [
+      {
+        "model": "grok-4",
+        "enabled": false
+      },
+      {
+        "model": "grok-3-mini-fast",
+        "enabled": false
+      },
+    {
+        "model": "openai-gpt-4",
+        "enabled": true
+    },
+    {
+        "model": "gemini-2.5-flash",
+        "enabled": true
+    },
+    {
+        "model": "deepseek-reasoner",
+        "enabled": false
+    },
+    {
+        "model": "deepseek-chat",
+        "enabled": false
+    },
+    {
+        "model": "anthropic-claude-3.5",
+        "enabled": false
+    }
+
+    ]
+  },
+  {
+    "type": "chairman",
+    "model": "chatgpt-4"
+  }
+]

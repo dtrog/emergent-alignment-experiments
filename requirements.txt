@@ -1,9 +1,10 @@
 openai
-anthropic
-google-generativeai
+openai-agents
+openai-agents[viz]
+openai-agents[litellm]
 requests
 colorama
 pandas
-groq
 python-dotenv
 scipy
+statsmodels
