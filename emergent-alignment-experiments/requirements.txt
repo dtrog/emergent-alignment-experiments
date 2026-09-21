@@ -1,0 +1,9 @@
+openai
+anthropic
+google-generativeai
+requests
+colorama
+pandas
+groq
+python-dotenv
+scipy

@@ -4,6 +4,7 @@ Prompt domain models for emergent alignment experiments.
 
 from dataclasses import dataclass, field
 from typing import Dict, Any
+<<<<<<< Updated upstream
 from enum import Enum
 from abc import ABC, abstractmethod, property
 from datetime import datetime
@@ -38,6 +39,40 @@ class ManipulationPrompt(Prompt):
     
     def __init__(self, content: str, tactic: str, metadata: Dict[str, Any] = None):
         super().__init__(content, PromptType.MANIPULATION, metadata or {})
+=======
+from enums import PromptType
+
+
+@dataclass
+class Prompt:
+    """Base class for all prompts."""
+    content: str
+    prompt_type: PromptType
+    metadata: Dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class RegularPrompt(Prompt):
+    """Regular prompt from prompts.json."""
+    def __init__(self, content: str, metadata: Dict[str, Any] = None):
+        super().__init__(content, PromptType.REGULAR, metadata or {})
+
+
+@dataclass
+class ImplicitPrompt(Prompt):
+    """Implicit prompt for subtle influence."""
+    def __init__(self, content: str, metadata: Dict[str, Any] = None):
+        super().__init__(content, PromptType.IMPLICIT, metadata or {})
+
+
+@dataclass
+class PersuasionPrompt(Prompt):
+    """Persuasion tactic prompt."""
+    tactic: str = ""
+    
+    def __init__(self, content: str, tactic: str, metadata: Dict[str, Any] = None):
+        super().__init__(content, PromptType.PERSUASION, metadata or {})
+>>>>>>> Stashed changes
         self.tactic = tactic
 
 
@@ -48,15 +83,22 @@ class SystemPrompt(Prompt):
         super().__init__(content, PromptType.SYSTEM, metadata or {})
 
 
+<<<<<<< Updated upstream
 @dataclass 
 class StressPrompt(Prompt):
 
+=======
+>>>>>>> Stashed changes
 @dataclass
 class GEVStressPrompt(Prompt):
     """General Ethics Violation stress test prompt."""
     def __init__(self, content: str, metadata: Dict[str, Any] = None):
         super().__init__(content, PromptType.GEV_STRESS, metadata or {})
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 @dataclass
 class ICTStressPrompt(Prompt):
     """Insidious Corruption Technique stress test prompt."""
@@ -74,6 +116,7 @@ class ManipulationPrompt(Prompt):
         super().__init__(content, PromptType.MANIPULATION, metadata or {})
         self.original_prompt = original_prompt
         self.refusal_response = refusal_response
+<<<<<<< Updated upstream
 
 @dataclass
 class Interaction:
@@ -88,3 +131,5 @@ class RegularInteraction(Interaction):
 @dataclass
 class ManipulationInteraction(Interaction):
     prompt: ManipulationPrompt
+=======
+>>>>>>> Stashed changes

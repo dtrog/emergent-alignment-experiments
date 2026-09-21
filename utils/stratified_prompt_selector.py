@@ -9,7 +9,11 @@ import random
 from typing import List, Dict, Any, Optional, Tuple
 from pathlib import Path
 
+<<<<<<< Updated upstream
 from models.prompts import ICTStressPrompt, RegularPrompt, GEVStressPrompt
+=======
+from domain.prompts import ICTStressPrompt, RegularPrompt, GEVStressPrompt
+>>>>>>> Stashed changes
 from utils import load_json_file
 
 

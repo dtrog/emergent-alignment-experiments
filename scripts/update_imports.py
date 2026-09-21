@@ -9,9 +9,15 @@ from pathlib import Path
 
 # Mapping of old imports to new imports
 IMPORT_MAPPINGS = {
+<<<<<<< Updated upstream
     'from models.prompts import PromptType': 'from models.prompts import PromptType',
     'from models.persuasions import PersuasionOutcome': 'from models.persuasions import PersuasionOutcome',
     'from models.prompts import PromptType, PersuasionOutcome': 'from models.prompts import PromptType, PersuasionOutcome',
+=======
+    'from enums import PromptType': 'from enums import PromptType',
+    'from enums import PersuasionOutcome': 'from enums import PersuasionOutcome',
+    'from enums import PromptType, PersuasionOutcome': 'from enums import PromptType, PersuasionOutcome',
+>>>>>>> Stashed changes
     
     # LLM models
     'from domain.llm_models import LLMModel': 'from domain.llm_models import LLMModel',

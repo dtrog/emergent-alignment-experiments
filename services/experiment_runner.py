@@ -20,12 +20,21 @@ from pathlib import Path
 from colorama import Fore, Style
 from tqdm import tqdm
 
+<<<<<<< Updated upstream
 from services.llm_client_service import LLMClient
 from utils import load_json_file
 from models import JudgesCommittee
 from models import ExperimentArm
 from prompt_builders import PromptBuilder
 from loggers import EnhancedLogger
+=======
+from utils import load_json_file
+from services.llm_client import LLMClient
+from models.llm_models import JudgesCommittee
+from models.sessions import ExperimentArm
+from prompt_builder import PromptBuilder
+from logger import Logger
+>>>>>>> Stashed changes
 
 
 class ExperimentRunner:
@@ -92,7 +101,11 @@ class ExperimentRunner:
         
         print(f"{Fore.CYAN}⚖️  Committee has {len(regular_judges)} regular judges + 1 chair judge{Style.RESET_ALL}")
         
+<<<<<<< Updated upstream
         self.logger = EnhancedLogger()
+=======
+        self.logger = Logger()
+>>>>>>> Stashed changes
         
     def run(self):
         """
@@ -196,9 +209,14 @@ class ExperimentRunner:
                     messages = PromptBuilder.build_manipulator_messages(manipulator_used.config, prompt, response)
                     improvised_prompt = manipulator_used.generate(messages)
                     
+<<<<<<< Updated upstream
                     persuasion_tactic_list = self.persuasion_list + [{"tactic": "llm_improvised_persuasion", "prompt": improvised_prompt}]
                     
                     persuasion_results['manipulator'] = manipulator_used.name
+=======
+                    persuasion_tactic_list = self.persuasion_list[:-1] + [{"tactic": "llm_improvised_persuasion", "prompt": improvised_prompt}]
+                    
+>>>>>>> Stashed changes
                     for tactic in persuasion_tactic_list:
                         final_response = arm.client.generate(arm.conversation_history + [{'role': 'user', 'content': tactic['prompt']}])
                         trimmed_final_response = final_response[:trim_len]
@@ -209,6 +227,10 @@ class ExperimentRunner:
                             tactic=tactic, final_response=trimmed_final_response
                         )
                         persuasion_results[tactic['tactic']] = persuasion_analysis
+<<<<<<< Updated upstream
+=======
+                        persuasion_results['manipulator'] = manipulator_used.name
+>>>>>>> Stashed changes
 
                         if persuasion_analysis.get('persuasion_outcome') == 'Persuaded':
                             stats["persuaded"] += 1
@@ -255,7 +277,11 @@ class ExperimentRunner:
                     else:
                         single_line_tactic_prompt = "N/A"
                     row_data[f"persuasion_prompt_{t_name}"] = single_line_tactic_prompt
+<<<<<<< Updated upstream
                     row_data[t_name] = json.dumps(persuasion_results.get(t_name, {}))
+=======
+                    row_data[t_name] = json.dumps(persuasion_results.get(t_name, {}), indent=2)
+>>>>>>> Stashed changes
 
                 self.logger.write_csv_row(row_data)
                 
@@ -274,7 +300,11 @@ class ExperimentRunner:
                     'is_refusal': is_refusal,
                     'refusal_justification_quality': parsed.get('ethical_disobedience_analysis', {}).get('justification_quality'),
                     'ethical_reasoning': parsed.get('ethical_disobedience_analysis', {}).get('judge_reasoning', ''),
+<<<<<<< Updated upstream
                     'committee_consensus': parsed.get('consensus', '') or '',
+=======
+                    'committee_consensus': str(parsed.get('consensus', '')),
+>>>>>>> Stashed changes
                     'chair_summary': parsed.get('chair_summary', '')
                 }
                 self.logger.write_memo_row(memo_data)
@@ -282,4 +312,8 @@ class ExperimentRunner:
                 if self.args.verbose:
                     print(f"{Fore.CYAN}📋 Memo data written with {len([k for k, v in memo_data.items() if v])} populated fields{Style.RESET_ALL}")
                 
+<<<<<<< Updated upstream
                 self.logger.log_actors(f"--- [END] Arm: {arm.name}, Session: {session_num}, Timestamp: {timestamp_utc} ---")
+=======
+                self.logger.log_actors(f"--- [END] Arm: {arm.name}, Session: {session_num} ---")
+>>>>>>> Stashed changes

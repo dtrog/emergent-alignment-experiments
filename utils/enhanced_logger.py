@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 """
 Enhanced logger for experiment results with per-run directories and detailed CSV outputs.
 
@@ -10,16 +11,54 @@ This module provides the EnhancedLogger class which handles:
 - Thread-safe logging operations
 - Backward compatibility with existing Logger interface
 """
+=======
+# Enhanced logger for experiment results with per-run directories and detailed CSV outputs.
+
+# This module provides the EnhancedLogger class which handles:
+# - Creating unique results directories per experiment run
+# - Per-arm CSV logging with different data types:
+#   -        row_data = {
+#             'arm_name': arm_name,
+#             'session_        row_data = {
+#             'arm_name': arm_name,
+#             'session_nr': session.session_number,
+#             'timestamp': session.timestamp.isoformat(),  # ISO-8601 format
+#             'persuasion_attempts_json': persuasion_attempts_json,
+#             'manipulation_attempt_json': manipulation_attempt_json,
+#             'overall_resilience_score': resilience.overall_resilience_score,
+#             'chair_conclusion': resilience.chair_summary,
+#             'full_committee_analysis_json': full_committee_analysis_json
+#         }on.session_number,
+#             'timestamp': session.timestamp.isoformat(),  # ISO-8601 format
+#             'original_prompt': prompt_content,
+#             'subject_response': session.subject_response,
+#             'artifact_created': memo.artifact_created,
+#             'artifact_analysis_json': artifact_analysis_json,
+#             'ethical_abort': memo.cas_vector.ethical_abort,
+#             'ethical_analysis_json': ethical_analysis_json,
+#             'persona_alignment_json': persona_alignment_json,
+#             'cas_vector_json': cas_vector_json,
+#             'chair_summary': memo.chair_summary
+#         }CSV with session data
+#   - Stewardship memos CSV with detailed committee analysis
+#   - Ethical memos CSV with persuasion/manipulation analysis
+# - Thread-safe logging operations
+# - Backward compatibility with existing Logger interface
+>>>>>>> Stashed changes
 
 import csv
 import json
 import threading
 from datetime import datetime
 from pathlib import Path
+<<<<<<< Updated upstream
 from typing import Dict, List, Any, Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from models.experiments import ExperimentSession
+=======
+from typing import Dict, List, Any, Optional
+>>>>>>> Stashed changes
 
 
 
@@ -136,7 +175,11 @@ class EnhancedLogger:
         if self.results_path is None:
             self.results_path = file_paths['results']
     
+<<<<<<< Updated upstream
     def log_session(self, session: 'ExperimentSession'):
+=======
+    def log_session(self, session: ExperimentSession):
+>>>>>>> Stashed changes
         """
         Log a complete experiment session to all relevant CSV files.
         
@@ -159,7 +202,11 @@ class EnhancedLogger:
             if session.ethical_resilience_memo:
                 self._log_to_ethical_csv(session)
     
+<<<<<<< Updated upstream
     def _log_to_results_csv(self, session: 'ExperimentSession'):
+=======
+    def _log_to_results_csv(self, session: ExperimentSession):
+>>>>>>> Stashed changes
         """Log session data to the main results CSV."""
         arm_name = session.arm_name
         memo = session.committee_memo
@@ -220,7 +267,11 @@ class EnhancedLogger:
         csv_info['writer'].writerow(row_data)
         csv_info['file'].flush()
     
+<<<<<<< Updated upstream
     def _log_to_stewardship_csv(self, session: 'ExperimentSession'):
+=======
+    def _log_to_stewardship_csv(self, session: ExperimentSession):
+>>>>>>> Stashed changes
         """Log detailed committee analysis to stewardship memos CSV."""
         arm_name = session.arm_name
         memo = session.committee_memo
@@ -282,7 +333,11 @@ class EnhancedLogger:
         csv_info['writer'].writerow(row_data)
         csv_info['file'].flush()
     
+<<<<<<< Updated upstream
     def _log_to_ethical_csv(self, session: 'ExperimentSession'):
+=======
+    def _log_to_ethical_csv(self, session: ExperimentSession):
+>>>>>>> Stashed changes
         """Log persuasion and manipulation analysis to ethical memos CSV."""
         arm_name = session.arm_name
         resilience = session.ethical_resilience_memo

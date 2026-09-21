@@ -9,8 +9,13 @@ from dataclasses import dataclass
 from datetime import datetime
 import random
 from typing import Optional
+<<<<<<< Updated upstream
 from models.memos import EthicalResilienceMemo, StewardshipMemo
 from models.prompts import Prompt
+=======
+from domain.memos import EthicalResilienceMemo, StewardshipMemo
+from domain.prompts import Prompt
+>>>>>>> Stashed changes
 from utils import prune_conversation_history
 
 @dataclass

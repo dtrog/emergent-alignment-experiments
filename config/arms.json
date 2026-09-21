@@ -1,17 +1,51 @@
 [
+<<<<<<< Updated upstream
   {
     "provider_model_ref": "Grok-4",
+=======
+    {
+      "name": "Grok-4 Full Memory",
+      "provider": "grok",
+      "model": "grok-4",
+      "api_base": "https://api.x.ai/v1",    
+      "keep_history": true,
+      "max_sessions": 500,
+      "enabled": false
+    },
+    {
+      "name": "Grok-4 Stateless",
+      "provider": "grok",
+      "model": "grok-4",
+      "api_base": "https://api.x.ai/v1",    
+      "keep_history": false,
+      "max_sessions": 200,
+      "enabled": false
+    },
+    {
+    "name": "Grok-3-mini-fast Full Memory",
+    "provider": "grok",
+    "model": "grok-3-mini-fast",
+    "api_base": "https://api.x.ai/v1",    
+>>>>>>> Stashed changes
     "keep_history": true,
     "max_sessions": 500,
     "enabled": false
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "Grok-4",
+=======
+    "name": "Grok-3-mini-fast Stateless",
+    "provider": "grok",
+    "model": "grok-3-mini-fast",
+    "api_base": "https://api.x.ai/v1",    
+>>>>>>> Stashed changes
     "keep_history": false,
     "max_sessions": 200,
     "enabled": false
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "Grok-3-mini-fast",
     "keep_history": true,
     "max_sessions": 500,
@@ -25,19 +59,31 @@
   },
   {
     "provider_model_ref": "OpenAI GPT-4",
+=======
+    "name": "OpenAI GPT-4 Full Memory",
+    "provider": "openai",
+    "model": "gpt-4",
+>>>>>>> Stashed changes
     "keep_history": true,
     "max_sessions": 500,
     "context_window": 8192,
     "enabled": true
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "OpenAI GPT-4",
+=======
+    "name": "OpenAI GPT-4 Stateless",
+    "provider": "openai",
+    "model": "gpt-4",
+>>>>>>> Stashed changes
     "keep_history": false,
     "max_sessions": 200,
     "context_window": 8192,
     "enabled": true
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "Gemini 2-5 Flash",
     "keep_history": true,
     "max_sessions": 500,
@@ -51,36 +97,95 @@
   },
   {
     "provider_model_ref": "DeepSeek Reasoner",
+=======
+    "name": "Gemini 2-5 Flash Full Memory",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "max_sessions": 500,
+    "keep_history": true,
+    "enabled": false
+  },
+  {
+    "name": "Gemini 2-5 Flash Stateless",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "max_sessions": 200,
+    "api_base": "https://generativelanguage.googleapis.com/v1beta/openai/",
+    "keep_history": false,
+    "enabled": true
+  },
+  {
+    "name": "DeepSeek Reasoner Full Memory",
+    "provider": "deepseek",
+    "model": "deepseek-reasoner",
+    "api_base": "https://api.deepseek.com/",
+>>>>>>> Stashed changes
     "keep_history": true,
     "max_sessions": 500,
     "enabled": false
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "DeepSeek Reasoner",
+=======
+    "name": "DeepSeek Reasoner Stateless",
+    "provider": "deepseek",
+    "model": "deepseek-reasoner",
+    "api_base": "https://api.deepseek.com/",
+>>>>>>> Stashed changes
     "keep_history": false,
     "max_sessions": 200,
     "enabled": false
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "DeepSeek Chat",
+=======
+    "name": "DeepSeek Chat Full Memory",
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "api_base": "https://api.deepseek.com/",
+>>>>>>> Stashed changes
     "keep_history": true,
     "max_sessions": 500,
     "enabled": false
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "DeepSeek Chat",
+=======
+    "name": "DeepSeek Chat Stateless",
+    "provider": "deepseek",
+    "model": "deepseek-chat",
+    "api_base": "https://api.deepseek.com/",
+>>>>>>> Stashed changes
     "keep_history": false,
     "max_sessions": 200,
     "enabled": false
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "Anthropic Claude 3.5",
+=======
+    "name": "Anthropic Claude 3.5 Full Memory",
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20240620",
+    "api_base": "https://api.anthropic.com/v1",
+>>>>>>> Stashed changes
     "keep_history": true,
     "max_sessions": 500,
     "enabled": true
   },
   {
+<<<<<<< Updated upstream
     "provider_model_ref": "Anthropic Claude 3.5",
+=======
+    "name": "Anthropic Claude 3.5 Stateless",
+    "provider": "anthropic",
+    "model": "claude-3-5-sonnet-20240620",
+    "api_base": "https://api.anthropic.com/v1",
+>>>>>>> Stashed changes
     "keep_history": false,
     "max_sessions": 200,
     "enabled": true

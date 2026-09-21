@@ -1,10 +1,17 @@
 openai
+<<<<<<< Updated upstream
 openai-agents
 openai-agents[viz]
 openai-agents[litellm]
+=======
+>>>>>>> Stashed changes
 requests
 colorama
 pandas
 python-dotenv
 scipy
+<<<<<<< Updated upstream
 statsmodels
+=======
+tqdm
+>>>>>>> Stashed changes

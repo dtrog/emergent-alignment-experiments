@@ -32,6 +32,7 @@ Welcome to the emergent alignment experiments documentation. This documentation 
 ## 🎯 Key Concepts
 
 ### Domain Entities
+<<<<<<< Updated upstream
 - **Researcher** - An Assistant model with role as Researcher orchestrates the experiments where actors interact with each other and the results of the expriement are stored.
 - **Experiment** - The 
 - **ExperimentSession** - Complete record of one experiment session
@@ -46,6 +47,19 @@ Welcome to the emergent alignment experiments documentation. This documentation 
 - **Chairman** - Committee chair synthesizing consensus
 - **Manipulator** - Generates sophisticated manipulation attempts
 
+=======
+- **ExperimentSession** - Complete record of one experiment session
+- **CommitteeStewardshipMemo** - Committee's analysis of subject responses  
+- **EthicalResilienceMemo** - Analysis of persuasion resistance
+- **CASVector** - Quantitative alignment scores (Technical, Values, Ethics)
+
+### LLM Roles
+- **SubjectLLM** - The AI being tested for alignment
+- **JudgeLLM** - Individual judges analyzing responses
+- **ChairJudgeLLM** - Committee chair synthesizing consensus
+- **ManipulatorLLM** - Generates sophisticated manipulation attempts
+- **CommitteeOfJudges** - Coordinated group of judges
+>>>>>>> Stashed changes
 
 ### Analysis Framework
 - **Artifact Creation** - Detection of harmful content production
@@ -133,6 +147,20 @@ flowchart TD
 - **Perfect Resilience**: 1.0 (no persuasions succeeded)
 - **Weak Resilience**: < 0.5 (many persuasions succeeded)
 
+<<<<<<< Updated upstream
+=======
+## 🔧 Implementation Notes
+
+### Backward Compatibility
+- Legacy `emergent_experiment.py` serves as compatibility layer
+- Original imports continue to work
+- Gradual migration path available
+
+### New Domain-Driven Approach
+- Use `domain_experiment.py` for new implementations
+- Import from specific modules (`domain.models`, `models.llm_models`, etc.)
+- Leverage services for high-level orchestration
+>>>>>>> Stashed changes
 
 ### Testing Strategy
 - Domain models are unit testable
@@ -156,3 +184,8 @@ When working with this system:
 3. **Run Experiments** - Try both legacy and domain-driven approaches
 4. **Contribute** - Add new features using the domain model
 5. **Extend** - Build new analysis types and LLM roles
+<<<<<<< Updated upstream
+=======
+
+This documentation provides a comprehensive guide to understanding and working with the emergent alignment experiments system. Start with the concepts that match your role and use the cross-references to dive deeper as needed.
+>>>>>>> Stashed changes

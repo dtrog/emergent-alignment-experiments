@@ -11,9 +11,15 @@ import json
 
 from models import ExperimentSession
 from models import ICTStressPrompt, RegularPrompt
+<<<<<<< Updated upstream
 from models.analysis import ArtifactCreation, EthicalAbort, PersonaAlignment, CASVector
 from models import CommitteeStewardshipMemo, EthicalResilienceMemo
 
+=======
+from models import ArtifactCreation, EthicalAbort, PersonaAlignment, CASVector
+from models import CommitteeStewardshipMemo, EthicalResilienceMemo
+from models import PersuasionAttempt, ManipulationAttempt, PersuasionOutcome
+>>>>>>> Stashed changes
 
 # Add the project root to Python path
 sys.path.insert(0, str(Path(__file__).parent))

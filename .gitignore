@@ -214,3 +214,6 @@ __marimo__/
 backup/
 
 #  Results files
+services/.DS_Store
+.DS_Store
+.DS_Store
